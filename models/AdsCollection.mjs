@@ -1,11 +1,12 @@
 import mongoose, { Schema, model } from "mongoose"
 
 const adsSchema = new Schema({
+    name: String,
     title: {
         type: String,
         required: true
     },
-    desciption: {
+    description: {
         type: String,
         required: true
     },
@@ -14,16 +15,16 @@ const adsSchema = new Schema({
         required: true
     },
     image: {
-        type: String,
-        required: true
+        type: Array || String,
     },
-    uid: {
-        type: String,
-        required: true
-    },
+    uid: String,
     viewState: {
-        type: String,
-        required: true
+        type: Object,
+        default: {
+            latitude: 24.9135104,
+            Longitude: 67.0826496,
+            zoom: 16,
+        }
     },
     date: {
         type: Date,

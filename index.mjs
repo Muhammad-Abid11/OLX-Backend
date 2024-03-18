@@ -5,10 +5,9 @@ import { PORT } from "./config/environment.mjs"
 db.connection.once('open', () => console.log("connected to db")).on("error", (err) => console.log("error connecting db -->", err))
 
 const app = express()
-const Port = 3001;
-app.listen(Port, () => {
-    console.log(`Server is running at http://localhost:${Port}`)
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`)
 })
-app.use(express.json())//for POST-API--> k hamara data JSON format me receive hoga
+app.use(express.json())
 
 app.use('/', router)

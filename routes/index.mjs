@@ -1,6 +1,6 @@
 import express from "express";
 import ads from './ads.mjs'
-import users from './user.mjs'
+import users from './users.mjs'
 const router = express.Router()
 router.get('/', (req, res) => {
     res.write("<p>/users</p>")
